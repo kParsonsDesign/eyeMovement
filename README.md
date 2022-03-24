@@ -14,7 +14,7 @@ The "eyes" on the screen are created from 4 files:
 Creating the images from multiple svg files allowed me to put each one on a separate z-index while also keeping them aligned.
 
 ## Project Implementation
-This project is available live at [kparsonsDesign.github.io/eyeMovement].
+This project is available live at [kparsonsDesign.github.io/eyeMovement](kparsonsDesign.github.io/eyeMovement).
 It is currently only formatted for computer screens (it requres a mouse to move the eyes).
 
 ## Updates
