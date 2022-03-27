@@ -13,7 +13,10 @@
   </body>
   <script>
     var balls = document.getElementsByClassName("ball");
-    document.onmousemove = () => {
+    document.onmousemove = moveEyes;
+    document.ontouchmove = moveEyes;
+    
+    function moveEyes() {
       var x = (event.clientX * 100) / window.innerWidth + "%";
       var y = (event.clientY * 100) / window.innerHeight + "%";
 
