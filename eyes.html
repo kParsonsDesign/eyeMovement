@@ -14,7 +14,11 @@
   <script>
     var balls = document.getElementsByClassName("ball");
     document.onmousemove = moveEyes;
+    /* 
+    makes eyes move on touch tap, but not drag:
     window.addEventListener('touchmove', moveEyes);
+    */
+    window.ontouchmove = moveEyes;
     
     function moveEyes() {
       var x = (event.clientX * 100) / window.innerWidth + "%";
