@@ -27,21 +27,30 @@
     
     function moveEyes() {
       console.log(event);
-      var x = (event.clientX * 100) / window.innerWidth + "%";
-      var y = (event.clientY * 100) / window.innerHeight + "%";
-
-      let xLeft = (event.clientX * 100) / (window.innerWidth / 2);
-      if (xLeft > 100) {xLeft = 100}
-      
-      let xRight = ((event.clientX * 100) / (window.innerWidth / 2)) - 100;
-      if (xRight < 0) {xRight = 0}
-      //console.log(xRight);
+      let x;
+      let y;
+      if (event.type === 'mousemove') {
+        x = (event.clientX * 100) / window.innerWidth + "%";
+        y = (event.clientY * 100) / window.innerHeight + "%";
+      }
+      if (event.type === 'touchmove') {
+        x = (event.changedTouches[0].clientX * 100) / window.innerWidth + "%";
+        y = (event.changedTouches[0].clientY * 100) / window.innerHeight + "%";
+      }
 
       for (let i = 0; i < 2; i++) {
         balls[i].style.left = x;
         balls[i].style.top = y;
         balls[i].transfoorm = "translate(-" + x + ",-" + y + ")";
       }
+      
+      // Make eyes move individually
+      let xLeft = (event.clientX * 100) / (window.innerWidth / 2);
+      if (xLeft > 100) {xLeft = 100}
+      
+      let xRight = ((event.clientX * 100) / (window.innerWidth / 2)) - 100;
+      if (xRight < 0) {xRight = 0}
+      //console.log(xRight);
 
       /*
       // left eye movement
