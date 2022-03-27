@@ -18,7 +18,12 @@
     makes eyes move on touch tap, but not drag:
     window.addEventListener('touchmove', moveEyes);
     */
+    /* 
+    also makes eyes move on touch tap, but not drag:
     window.ontouchmove = moveEyes;
+    */
+    document.getElementsByTagName('body')[0].ontouchmove = moveEyes;
+    
     
     function moveEyes() {
       var x = (event.clientX * 100) / window.innerWidth + "%";
