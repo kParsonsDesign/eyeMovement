@@ -1,4 +1,7 @@
-window.onload = function () {
+window.onload = setSizing;
+window.onresize = setSizing;
+
+function setSizing() {
   const leftEyeDiv = document.getElementsByClassName('left-eye')[0];
   const leftEye = document.getElementById('left-eye');
   const leftEyeBox = leftEye.getBoundingClientRect();
@@ -7,19 +10,6 @@ window.onload = function () {
   const rightEye = document.getElementById('right-eye');
   const rightEyeBox = rightEye.getBoundingClientRect();
 
-  // Left Eye Div Size
-  // (posistion controlled by .eyes grid positioning)
-  leftEyeDiv.style.width = `${leftEyeBox.width}px`;
-  leftEyeDiv.style.height = `${leftEyeBox.height}px`;
-  // Right Eye Div Size
-  // (posistion controlled by .eyes grid positioning)
-  rightEyeDiv.style.width = `${rightEyeBox.width}px`;
-  rightEyeDiv.style.height = `${rightEyeBox.height}px`;
-
-  // Eye Images
-  //leftEye.style.width = ;
-
-  
   // Iris Information
   let leftIris = {
     img: document.getElementById('left-iris'),
@@ -27,11 +17,11 @@ window.onload = function () {
     x: 0, // x position
     y: 0, // y position
     left: {
-      min: eyeBox.width * 0.08, // ~20px
-      max: eyeBox.width * 0.37, // ~90px
+      min: leftEyeBox.width * 0.08, // ~20px
+      max: leftEyeBox.width * 0.37, // ~90px
     },
     top: {
-      min: eyeBox.height * 0.25,
+      min: leftEyeBox.height * 0.25,
       max: 0,
     },
     width: {
@@ -50,11 +40,11 @@ window.onload = function () {
     x: 0, // x position
     y: 0, // y position
     left: {
-      min: eyeBox.width * 0.08, // ~20px
-      max: eyeBox.width * 0.37, // ~90px
+      min: rightEyeBox.width * 0.08, // ~20px
+      max: rightEyeBox.width * 0.37, // ~90px
     },
     top: {
-      min: eyeBox.height * 0.25,
+      min: rightEyeBox.height * 0.25,
       max: 0,
     },
     width: {
@@ -67,14 +57,32 @@ window.onload = function () {
     },
   };
   
-  // Iris Sizes
-  leftIris.img.style.height = `${leftEye.clientHeight * 0.4}px`;
-  rightIris.img.style.height = `${rightEye.clientHeight * 0.4}px`;
-
   // iris Divs
   console.log(leftEyeBox);
-  console.log(leftIrisDiv);
+  console.log(leftIris.div);
+  leftIris.div.style.width = `${(leftEyeBox.width) * 0.7}px`;
+  leftIris.div.style.left = `${(leftEyeBox.width) * 0.1}px`;
+  leftIris.div.style.height = `${(leftEyeBox.height) * 0.6}px`;
+  leftIris.div.style.top = `-${(leftEyeBox.height) * 0.7}px`;
+  
+  rightIris.div.style.width = `${(rightEyeBox.width) * 0.7}px`;
+  rightIris.div.style.left = `${(rightEyeBox.width) * 0.2}px`;
+  rightIris.div.style.height = `${(rightEyeBox.height) * 0.6}px`;
+  rightIris.div.style.top = `-${(rightEyeBox.height) * 0.7}px`;
 
+  // iris Start Position
+  leftIris.img.style.left = `25%`;
+  rightIris.img.style.left = `30%`;
+  leftIris.img.style.top = `25%`;
+  rightIris.img.style.top = `25%`;
+  
+
+  // Iris Sizes
+  //leftIris.img.style.height = `${leftEye.clientHeight * 0.4}px`;
+  //rightIris.img.style.height = `${rightEye.clientHeight * 0.4}px`;
+
+
+  /*
   // left iris Div
   // top min = eyeBox.height * 0.25
   leftIrisDiv.style.top = `${leftEyeBox.height * 0.4}px`;
@@ -89,6 +97,7 @@ window.onload = function () {
   //rightIrisDiv.style.top = `${(rightEyeBox.height) * 0.25}px`;
   rightIrisDiv.style.top = `100px`;
   rightIrisDiv.style.left = `40px`;
+*/
 
   // start iris appropriate location
   // left

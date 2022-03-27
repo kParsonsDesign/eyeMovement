@@ -1,47 +1,99 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: silver;
 }
 
-img {
-  position: absolute;
+img.right {
+  /* flip all right eye images */
+  transform: scaleX(-1);
 }
 
 .eyes {
-  position: relative;
+  /* 
+  keep both eyes on same line
+  works better than inline-block
+  */
   display: grid;
-  min-width: 90vw;
-  min-height: 50vh;
-  /*padding: 5vw 20vw;
-  background-color: #707070;*/
   grid-template-columns: auto auto;
   justify-content: center;
-  gap: 0px;
-  z-index: 1;
+  padding: 20vh 0 10vh;
 }
 
 .left-eye,
 .right-eye {
+  /*
+  forces div area to 
+  display eyes
+  */
+  display: block;
   position: relative;
-  overflow: hidden;
+  width: 50vw;
+  max-height: 70vh;
+  /* 
+  temp change to see where things are
+  remove when done:
+  overflow: hidden; 
+  */
+}
+
+.left-eye {
+  text-align: right;
+  padding-left: 20%;
+}
+
+.right-eye {
+  text-align: left;
+  padding-right: 20%;
 }
 
 #left-eye,
-#right-eye,
-#left-white,
-#right-white {
-  height: 300px;
-  max-width: 50vw;
-  max-height: 50vh;
-}  
-
-.left-iris,
-.right-iris {
-  display: block;
+#right-eye {
+  /* 
+  makes eye images 
+  responsive to window size
+  */
   position: relative;
+  max-width: 50vw;
+  max-height: 70vh;
 }
 
-img.right {
-  transform: scaleX(-1);
+.left-iris, 
+.right-iris {
+  position: relative;
+  background-color: whitesmoke;
+  overflow: hidden;
+  opacity: 100%;
+
+  /* all iris info will have to be calculated by JavaScript */
+  /*margin-top: -100%;
+  top: -70%;
+  height: 65%;
+  width: 70%; /*60%*/
+}
+
+/*
+iris boundary and positioning done in JavaScript
+Remove this block when done.
+.left-iris {
+  left: 10%;
+}
+
+.right-iris {
+  left: 20%;
+}
+*/
+
+#left-iris,
+#right-iris {
+  /* set initial iris size */
+  position: absolute;
+  max-height: 60%;
 }
 
 .z1 {
@@ -55,18 +107,4 @@ img.right {
 }
 .z4 {
   z-index: 4;
-}
-
-/* testing */
-.container {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
-}
-.item {
-  display: block;
-  width: 25vw;
-  height: 12.5vw;
-  border-style: solid;
 }
