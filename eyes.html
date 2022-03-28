@@ -41,4 +41,52 @@
       }
     </script>
   </body>
+<<<<<<< HEAD
+=======
+  <script>
+    var balls = document.getElementsByClassName("ball");
+    document.onmousemove = moveEyes;
+    /* 
+    makes eyes move on touch tap, but not drag:
+    window.addEventListener('touchmove', moveEyes);
+    */
+    /* 
+    also makes eyes move on touch tap, but not drag:
+    window.ontouchmove = moveEyes;
+    */
+    document.getElementsByTagName('body')[0].ontouchmove = moveEyes;
+    
+    
+    function moveEyes() {
+      console.log(event);
+      var x = (event.clientX * 100) / window.innerWidth + "%";
+      var y = (event.clientY * 100) / window.innerHeight + "%";
+
+      let xLeft = (event.clientX * 100) / (window.innerWidth / 2);
+      if (xLeft > 100) {xLeft = 100}
+      
+      let xRight = ((event.clientX * 100) / (window.innerWidth / 2)) - 100;
+      if (xRight < 0) {xRight = 0}
+      //console.log(xRight);
+
+      for (let i = 0; i < 2; i++) {
+        balls[i].style.left = x;
+        balls[i].style.top = y;
+        balls[i].transfoorm = "translate(-" + x + ",-" + y + ")";
+      }
+
+      /*
+      // left eye movement
+      balls[0].style.left = xLeft + '%';
+      balls[0].style.top = y;
+      balls[0].transform = 'translate(-' + xLeft + '%,-' + y + ')';
+
+      // right eye movement
+      balls[1].style.left = xRight + '%';
+      balls[1].style.top = y;
+      balls[1].transform = 'translate(-' + xRight + '%,-' + y + ')';
+      */
+    };
+  </script>
+>>>>>>> parent of a535e37 (Fixes touch screen handling)
 </html>
