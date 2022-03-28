@@ -7,14 +7,15 @@ body {
 .wrapper {
   position: relative;
 }
+
 .eyes {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-
   text-align: center;
 }
+
 .eye {
   width: 240px;
   height: 120px;
@@ -25,6 +26,7 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .ball {
   width: 80px;
   height: 80px;
