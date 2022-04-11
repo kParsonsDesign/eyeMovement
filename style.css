@@ -26,7 +26,7 @@ img.right {
   gap: 0;
   justify-content: center;
   max-width: 690px;
-  margin: 30vh auto;
+  margin: 0 auto;
 }
 
 /* individual eye divs */
