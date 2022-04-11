@@ -14,88 +14,72 @@ img.right {
   transform: scaleX(-1);
 }
 
+/* container for both eyes and all eye content */
 .eyes {
   /* 
   keep both eyes on same line
   works better than inline-block
   */
+  position: relative;
   display: grid;
   grid-template-columns: auto auto;
+  gap: 0;
   justify-content: center;
-  padding: 20vh 0 10vh;
+  max-width: 690px;
+  margin: 30vh auto;
 }
 
+/* individual eye divs */
 .left-eye,
 .right-eye {
-  /*
-  forces div area to 
-  display eyes
-  */
-  display: block;
   position: relative;
-  width: 50vw;
-  max-height: 70vh;
-  /* 
-  temp change to see where things are
-  remove when done:
+  display: block;
+  width: 344px; /* original width: 172px */
+  height: 300px; /* original height: 150px */
   overflow: hidden; 
-  */
 }
 
-.left-eye {
-  text-align: right;
-  padding-left: 20%;
-}
-
-.right-eye {
-  text-align: left;
-  padding-right: 20%;
-}
-
+/* outer eye images */
 #left-eye,
 #right-eye {
-  /* 
-  makes eye images 
-  responsive to window size
-  */
-  position: relative;
-  max-width: 50vw;
-  max-height: 70vh;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
+/* iris movement container divs */
 .left-iris, 
 .right-iris {
   position: relative;
   background-color: whitesmoke;
+  width: 260px;
+  height: 210px;
+  top: 85px;
   overflow: hidden;
-  opacity: 100%;
-
-  /* all iris info will have to be calculated by JavaScript */
-  /*margin-top: -100%;
-  top: -70%;
-  height: 65%;
-  width: 70%; /*60%*/
 }
 
-/*
-iris boundary and positioning done in JavaScript
-Remove this block when done.
 .left-iris {
-  left: 10%;
+  left: 14px; /* 5% of 344 = 17.2, 5% of 280 = 14 */
 }
 
 .right-iris {
-  left: 20%;
+  left: 64px;
 }
-*/
 
+/* iris and pupil images */
 #left-iris,
 #right-iris {
-  /* set initial iris size */
   position: absolute;
-  max-height: 60%;
+  /* set initial iris size */
+  width: 100px;
+  height: 100px;
+  transform: translate(83%, 62%);
 }
 
+/* 
+file orders 
+hides irises and whites behind eye images 
+*/
 .z1 {
   z-index: 1;
 }
