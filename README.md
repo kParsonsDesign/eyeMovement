@@ -8,9 +8,12 @@ The original goal of this project was to create eye-like images from multiple di
 I modified this project heavily from the original goals.
 
 1. Created 2 svg images for the left eye using Adobe Illustrator
-  1. The eye outline (the black lines with a gray background)
-  2. The green iris with black pupil
-  3. The white of the eye is achieved by a white background color on the div containing the pupil
+  1. 
+The eye outline (the black lines with a gray background)
+  2. 
+The green iris with black pupil
+  3. 
+The white of the eye is achieved by a white background color on the div containing the pupil
 2. The images for the right eye are created by using css to flip them in the x-direction
 3. Added touch handling for mobile devices via javascript touch event
 4. Added limited image resizing for mobile via css media query
