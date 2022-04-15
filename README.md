@@ -24,6 +24,8 @@ I modified this project heavily from the original goals.
 ## How to Run
 See these crazy eyes on any web browser at [kParsonsDesign.github.io/eyemovement/](https://kParsonsDesign.github.io/eyemovement/).
 
+The original class project can be viewed at [kParsonsDesign.github.io/eyemovement/eyes-class-version.html](https://kParsonsDesign.github.io/eyemovement/eyes-class-version.html)
+
 ## Roadmap
 I may try to make each eye move somewhat independently from the other. I would like to try to get a "cross-eyed" effect, but initial results just looked odd. I would need to try to track the mouse movement from an angle related to each eye, as using the position related to screen width does not create the correct effect.
 
