@@ -18,13 +18,14 @@ I modified this project heavily from the original goals.
   <li>The images for the right eye are created by using css to flip them in the x-direction</li>
   <li>Added touch handling for mobile devices via javascript touch event</li>
   <li>Added limited image resizing for mobile via css media query</li>
+  <li>Included a meta tag to stop the pinterest onhover popup from appearing, since use of this page involves waving the mouse over the eye images repeatedly</li>
 </ol>
 
 ## How to Run
 See these crazy eyes on any web browser at [kParsonsDesign.github.io/eyemovement/](https://kParsonsDesign.github.io/eyemovement/).
 
 ## Roadmap
-I may try to make each eye move somewhat independently from the other. I would like to try to get a "cross-eyed" effect, but initial results just looked odd. I would need to try to track the mouse movement from an angle related to each eye, as using the position related to screen width does create the correct effect.
+I may try to make each eye move somewhat independently from the other. I would like to try to get a "cross-eyed" effect, but initial results just looked odd. I would need to try to track the mouse movement from an angle related to each eye, as using the position related to screen width does not create the correct effect.
 
 ## License
 Copyright &copy; Katherine Parsons 2022
